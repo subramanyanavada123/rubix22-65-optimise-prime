@@ -44,12 +44,19 @@ class _KitchenWidgetState extends State<KitchenWidget> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                StatWidget(),
-                Food2Widget(),
-              ],
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 1,
+              decoration: BoxDecoration(
+                color: Color(0xFFEEEEEE),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  StatWidget(),
+                  Food2Widget(),
+                ],
+              ),
             ),
           ],
         ),
