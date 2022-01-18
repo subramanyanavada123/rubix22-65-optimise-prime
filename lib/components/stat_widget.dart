@@ -19,7 +19,7 @@ class _StatWidgetState extends State<StatWidget> {
       width: MediaQuery.of(context).size.width * 0.95,
       height: 100,
       decoration: BoxDecoration(
-        color: Color(0xFFFFF1BD),
+        color: Color(0xFF00063D),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -36,7 +36,13 @@ class _StatWidgetState extends State<StatWidget> {
                   width: 160,
                   height: 80,
                   decoration: BoxDecoration(
-                    color: Color(0xFFA3DA8D),
+                    color: FlutterFlowTheme.tertiaryColor,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0xFF0E6CAD),
+                      )
+                    ],
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Padding(
@@ -106,7 +112,13 @@ class _StatWidgetState extends State<StatWidget> {
                   width: 160,
                   height: 80,
                   decoration: BoxDecoration(
-                    color: Color(0xFFCDDEFF),
+                    color: Color(0xFFEEF2FF),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 4,
+                        color: Color(0xFFFFF1BD),
+                      )
+                    ],
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Padding(
@@ -128,6 +140,7 @@ class _StatWidgetState extends State<StatWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'Poppins',
                                     color: Color(0xC4050E6A),
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w600,
                                     lineHeight: 1,
                                   ),
