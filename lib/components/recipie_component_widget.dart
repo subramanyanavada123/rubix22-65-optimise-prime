@@ -15,8 +15,8 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.height * 0.6,
+      width: MediaQuery.of(context).size.width * 0.85,
+      height: MediaQuery.of(context).size.height * 0.55,
       decoration: BoxDecoration(
         color: Color(0xFFCDDEFF),
         boxShadow: [

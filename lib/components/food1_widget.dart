@@ -19,7 +19,7 @@ class _Food1WidgetState extends State<Food1Widget> {
         width: MediaQuery.of(context).size.width * 0.95,
         height: 100,
         decoration: BoxDecoration(
-          color: Color(0xFFD7E9F7),
+          color: FlutterFlowTheme.tertiaryColor,
           boxShadow: [
             BoxShadow(
               blurRadius: 3,
@@ -27,6 +27,9 @@ class _Food1WidgetState extends State<Food1Widget> {
             )
           ],
           borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: Color(0xFF0E6CAD),
+          ),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.max,

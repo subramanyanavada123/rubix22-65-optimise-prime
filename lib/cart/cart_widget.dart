@@ -1,4 +1,5 @@
 import '../components/food1_widget.dart';
+import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -18,25 +19,32 @@ class _CartWidgetState extends State<CartWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.primaryColor,
-        iconTheme: IconThemeData(color: Color(0xFFEEF2FF)),
-        automaticallyImplyLeading: true,
-        actions: [],
-        centerTitle: true,
-        elevation: 4,
-      ),
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Food1Widget(),
-              ],
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 1,
+              decoration: BoxDecoration(
+                color: Color(0xFF00063D),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFF26BFA4),
+                  )
+                ],
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    StatWidget(),
+                    Food1Widget(),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
