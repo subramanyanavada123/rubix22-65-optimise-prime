@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Lists2Widget extends StatefulWidget {
@@ -317,7 +318,7 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                         fontFamily:
                                                                             'Poppins',
                                                                         fontSize:
-                                                                            20,
+                                                                            18,
                                                                         lineHeight:
                                                                             1,
                                                                       ),
@@ -328,55 +329,41 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceAround,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .center,
                                                                   children: [
-                                                                    Icon(
-                                                                      Icons
-                                                                          .analytics,
-                                                                      color: FlutterFlowTheme
-                                                                          .secondaryColor,
+                                                                    FaIcon(
+                                                                      FontAwesomeIcons
+                                                                          .cannabis,
+                                                                      color: Color(
+                                                                          0xFF244F02),
                                                                       size: 40,
                                                                     ),
-                                                                  ],
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        5,
-                                                                        5,
-                                                                        25,
-                                                                        5),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .end,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          2,
-                                                                          0),
-                                                                  child: Text(
-                                                                    '5',
-                                                                    style: FlutterFlowTheme
-                                                                        .title1
-                                                                        .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: Color(
-                                                                          0xFFDA1111),
-                                                                      fontSize:
-                                                                          28,
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                              50,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                      child:
+                                                                          Text(
+                                                                        '30',
+                                                                        style: FlutterFlowTheme
+                                                                            .title2
+                                                                            .override(
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          fontSize:
+                                                                              28,
+                                                                        ),
+                                                                      ),
                                                                     ),
-                                                                  ),
+                                                                  ],
                                                                 ),
                                                               ],
                                                             ),
@@ -434,7 +421,7 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                         .fromSTEB(
                                                                             10,
                                                                             15,
-                                                                            5,
+                                                                            0,
                                                                             5),
                                                                 child: Column(
                                                                   mainAxisSize:
@@ -453,7 +440,7 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                               .max,
                                                                       children: [
                                                                         Text(
-                                                                          'Items \nWasted',
+                                                                          'Money\nWasted',
                                                                           style: FlutterFlowTheme
                                                                               .title2
                                                                               .override(
@@ -470,47 +457,31 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Icon(
-                                                                          Icons
-                                                                              .analytics,
+                                                                        FaIcon(
+                                                                          FontAwesomeIcons
+                                                                              .trash,
                                                                           color:
-                                                                              FlutterFlowTheme.secondaryColor,
+                                                                              Colors.black,
                                                                           size:
-                                                                              40,
+                                                                              35,
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              30,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                          child:
+                                                                              Text(
+                                                                            '3000',
+                                                                            style:
+                                                                                FlutterFlowTheme.bodyText1.override(
+                                                                              fontFamily: 'Poppins',
+                                                                              fontSize: 28,
+                                                                            ),
+                                                                          ),
                                                                         ),
                                                                       ],
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5,
-                                                                            5,
-                                                                            15,
-                                                                            5),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .end,
-                                                                  children: [
-                                                                    Text(
-                                                                      '5',
-                                                                      style: FlutterFlowTheme
-                                                                          .title1
-                                                                          .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        color: Color(
-                                                                            0xFFDA1111),
-                                                                        fontSize:
-                                                                            28,
-                                                                      ),
                                                                     ),
                                                                   ],
                                                                 ),
@@ -572,7 +543,7 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                             .max,
                                                                     children: [
                                                                       Text(
-                                                                        'Items \nWasted',
+                                                                        'Items \nDonated',
                                                                         style: FlutterFlowTheme
                                                                             .title2
                                                                             .override(
@@ -591,9 +562,9 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                     children: [
                                                                       Icon(
                                                                         Icons
-                                                                            .analytics,
-                                                                        color: FlutterFlowTheme
-                                                                            .secondaryColor,
+                                                                            .done_all,
+                                                                        color: Color(
+                                                                            0xFFFEC300),
                                                                         size:
                                                                             40,
                                                                       ),
@@ -619,7 +590,7 @@ class _Lists2WidgetState extends State<Lists2Widget> {
                                                                         .end,
                                                                 children: [
                                                                   Text(
-                                                                    '5',
+                                                                    '7',
                                                                     style: FlutterFlowTheme
                                                                         .title1
                                                                         .override(

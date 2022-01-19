@@ -1,17 +1,16 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Food1Widget extends StatefulWidget {
-  const Food1Widget({Key key}) : super(key: key);
+class Food4Widget extends StatefulWidget {
+  const Food4Widget({Key key}) : super(key: key);
 
   @override
-  _Food1WidgetState createState() => _Food1WidgetState();
+  _Food4WidgetState createState() => _Food4WidgetState();
 }
 
-class _Food1WidgetState extends State<Food1Widget> {
+class _Food4WidgetState extends State<Food4Widget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -147,32 +146,18 @@ class _Food1WidgetState extends State<Food1Widget> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    'Consumed',
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: FlutterFlowTheme.primaryColor,
-                    ),
-                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(30, 20, 0, 0),
-                        child: FaIcon(
-                          FontAwesomeIcons.arrowAltCircleRight,
+                        padding: EdgeInsetsDirectional.fromSTEB(30, 20, 0, 10),
+                        child: Icon(
+                          Icons.shopping_cart,
                           color: Color(0xFF244F02),
                           size: 24,
                         ),
                       ),
                     ],
-                  ),
-                  Text(
-                    'Donate',
-                    style: FlutterFlowTheme.bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0xFF244F02),
-                    ),
                   ),
                 ],
               ),
