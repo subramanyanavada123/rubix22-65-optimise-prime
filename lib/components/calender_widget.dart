@@ -3,14 +3,12 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CalenderWidget extends StatefulWidget {
-  const CalenderWidget({Key key}) : super(key: key);
+class CalenderWidget extends StatelessWidget {
 
-  @override
-  _CalenderWidgetState createState() => _CalenderWidgetState();
-}
+  var values;
 
-class _CalenderWidgetState extends State<CalenderWidget> {
+  CalenderWidget(this.values);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,7 +47,7 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Pending Order',
+                      values['item_name'],
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'Poppins',
                         color: FlutterFlowTheme.primaryColor,
@@ -57,13 +55,13 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                       ),
                     ),
                     Text(
-                      'Estimated Pickup TIme',
+                      'Added On',
                       style: FlutterFlowTheme.bodyText1,
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                       child: Text(
-                        '4:00pm',
+                        values['created_date'].toString(),
                         style: FlutterFlowTheme.title1,
                       ),
                     ),
@@ -91,14 +89,14 @@ class _CalenderWidgetState extends State<CalenderWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                           child: Text(
-                            '(4 items)',
+                            '(' + values['quantity'].toString() + 'items)',
                             style: FlutterFlowTheme.bodyText1,
                           ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(4, 4, 0, 0),
                           child: Text(
-                            '\$25.40',
+                            '\₹' + values['total_price'].toString(),
                             style: FlutterFlowTheme.title3.override(
                               fontFamily: 'Poppins',
                               color: Color(0xFF1D2429),
