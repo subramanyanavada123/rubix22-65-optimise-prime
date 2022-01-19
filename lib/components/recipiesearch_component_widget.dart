@@ -24,13 +24,7 @@ class _RecipiesearchComponentWidgetState
         width: 150,
         height: 150,
         decoration: BoxDecoration(
-          color: Color(0xFFEEEEEE),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: Image.asset(
-              'assets/images/try1.jpg',
-            ).image,
-          ),
+          color: FlutterFlowTheme.tertiaryColor,
           boxShadow: [
             BoxShadow(
               blurRadius: 5,
@@ -43,58 +37,69 @@ class _RecipiesearchComponentWidgetState
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'DIsh name',
-                        style: FlutterFlowTheme.title2.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFFEEEEEE),
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  width: 150,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFEEEEEE),
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: Image.asset(
+                        'assets/images/try1.jpg',
+                      ).image,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Type',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.primaryColor,
-                        ),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'DIsh name',
+                      style: FlutterFlowTheme.title2.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.primaryColor,
+                        fontSize: 18,
                       ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      RatingBar.builder(
-                        onRatingUpdate: (newValue) =>
-                            setState(() => ratingBarValue = newValue),
-                        itemBuilder: (context, index) => Icon(
-                          Icons.star_rounded,
-                          color: FlutterFlowTheme.secondaryColor,
-                        ),
-                        direction: Axis.horizontal,
-                        initialRating: ratingBarValue ??= 3,
-                        unratedColor: Color(0xFF9E9E9E),
-                        itemCount: 5,
-                        itemSize: 15,
-                        glowColor: FlutterFlowTheme.secondaryColor,
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'Type',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: FlutterFlowTheme.primaryColor,
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    RatingBar.builder(
+                      onRatingUpdate: (newValue) =>
+                          setState(() => ratingBarValue = newValue),
+                      itemBuilder: (context, index) => Icon(
+                        Icons.star_rounded,
+                        color: FlutterFlowTheme.secondaryColor,
+                      ),
+                      direction: Axis.horizontal,
+                      initialRating: ratingBarValue ??= 3,
+                      unratedColor: Color(0xFF9E9E9E),
+                      itemCount: 5,
+                      itemSize: 15,
+                      glowColor: FlutterFlowTheme.secondaryColor,
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
