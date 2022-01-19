@@ -1,4 +1,3 @@
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +32,7 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
             color: FlutterFlowTheme.tertiaryColor,
           )
         ],
-        borderRadius: BorderRadius.circular(0),
+        borderRadius: BorderRadius.circular(30),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
@@ -80,26 +79,6 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
           Text(
             'Steps',
             style: FlutterFlowTheme.bodyText1,
-          ),
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30,
-                borderWidth: 1,
-                buttonSize: 60,
-                icon: Icon(
-                  Icons.mic,
-                  color: Colors.black,
-                  size: 30,
-                ),
-                onPressed: () {
-                  print('IconButton pressed ...');
-                },
-              ),
-            ],
           ),
         ],
       ),

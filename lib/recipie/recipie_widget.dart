@@ -24,7 +24,7 @@ class _RecipieWidgetState extends State<RecipieWidget> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 1,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.tertiaryColor,
+            color: Color(0xFFEEEEEE),
             image: DecorationImage(
               fit: BoxFit.cover,
               image: Image.asset(
