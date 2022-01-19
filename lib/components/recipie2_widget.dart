@@ -41,10 +41,11 @@ class _Recipie2WidgetState extends State<Recipie2Widget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Ingredient\n name',
+                  'Ingredient\nname',
+                  textAlign: TextAlign.start,
                   style: FlutterFlowTheme.title2.override(
                     fontFamily: 'Lato',
-                    fontSize: 18,
+                    fontSize: 16,
                     lineHeight: 1,
                   ),
                 ),
