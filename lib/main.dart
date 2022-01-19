@@ -10,6 +10,8 @@ import 'chat/chat_test.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'link/link_widget.dart';
+
 void main() async {
   runApp(MyApp());
 }
@@ -32,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: CalenderMainWidget(),
+      home: LinkWidget(),
     );
   }
 }

@@ -1,3 +1,7 @@
+import 'package:lottie/lottie.dart';
+import 'package:makirasoii2/components/empty.dart';
+import 'package:makirasoii2/components/stat_widget.dart';
+
 import '../components/calender_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -56,7 +60,6 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
         });
         data.forEach((each) {
           try {
-
             var date = DateTime.parse(each['expiry_date'] + "Z");
             if (selectedEvents[date] != null)
               selectedEvents[date].add(each);
@@ -94,7 +97,7 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
                 children: [
                   Container(
                       width: MediaQuery.of(context).size.width * 1,
-                      height: MediaQuery.of(context).size.height * 0.65,
+                      height: MediaQuery.of(context).size.height * 0.615,
                       decoration: BoxDecoration(
                         color: Color(0xFFB4DFF5),
                       ),
@@ -105,6 +108,7 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
                         onDaySelected: (_selectedDay, _focusedDay) {
                           setState(() {
                             selectedDay = _selectedDay;
+                            focusedDay = _focusedDay;
                           });
                         },
                         selectedDayPredicate: (day) {
@@ -115,7 +119,21 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
                   // CalenderWidget(selectedEvents[selectedDay][0]),
                   // CalenderWidget(),
                   // ElevatedButton(onPressed: addEvent, child: Text("addEvent")),
-                  ...getEventsFromToday(selectedDay).map((e){
+                  if (getEventsFromToday(selectedDay).length == 0)
+                    Container(
+                      width: 200,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Lottie.asset(
+                        'assets/lottie_animations/open and close box.json',
+                        fit: BoxFit.cover,
+                        repeat: true,
+                      ),
+                    ),
+
+                  ...getEventsFromToday(selectedDay).map((e) {
                     return CalenderWidget(e);
                   })
                 ],
