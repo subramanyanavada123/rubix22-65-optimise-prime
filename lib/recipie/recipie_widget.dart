@@ -14,6 +14,10 @@ class RecipieWidget extends StatefulWidget {
 class _RecipieWidgetState extends State<RecipieWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  String url = "https://api.spoonacular.com/recipes/324694/analyzedInstructions&apiKey=API-KEY";
+
+  final response = await http.get(Uri.parse(url));
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
