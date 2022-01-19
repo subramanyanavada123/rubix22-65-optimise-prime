@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:makirasoii2/home_page/home_page_widget.dart';
 import 'package:makirasoii2/recipie/recipie_widget.dart';
+import 'package:makirasoii2/recipietemp/recipietemp_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: RecipieWidget(),
+      home: RecipietempWidget(),
     );
   }
 }

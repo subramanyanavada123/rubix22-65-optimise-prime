@@ -1,8 +1,13 @@
+import 'package:makirasoii2/components/recipie_component_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 class RecipietempWidget extends StatefulWidget {
   const RecipietempWidget({Key key}) : super(key: key);
@@ -14,6 +19,30 @@ class RecipietempWidget extends StatefulWidget {
 class _RecipietempWidgetState extends State<RecipietempWidget> {
   PageController pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  var recipes;
+  bool present = false;
+
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  void getData() async {
+    const API_KEY = "8afaaf5604f4495fa9e9b52c1fb6a8ef";
+    // String url =
+    //     "https://api.spoonacular.com/recipes/324694/analyzedInstructions?apiKey=" + API_KEY;
+
+    String url = "http://192.168.0.192:5000/fetchrecipe";
+
+    final response = await http.get(Uri.parse(url));
+    var data = json.decode(response.body);
+    print(data);
+    setState(() {
+      recipes = data;
+      present = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,6 +142,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                           height: 500,
                           child: Stack(
                             children: [
+                              if(present)
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
@@ -121,33 +151,11 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                                       PageController(initialPage: 0),
                                   scrollDirection: Axis.horizontal,
                                   children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Hello World',
-                                          style: FlutterFlowTheme.bodyText1,
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Hello World',
-                                          style: FlutterFlowTheme.bodyText1,
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Hello World',
-                                          style: FlutterFlowTheme.bodyText1,
-                                        ),
-                                      ],
-                                    ),
+                                     ...(recipes[0]['steps'])
+                                            .map((recipe) {
+                                          return RecipieComponentWidget(
+                                              recipe);
+                                        })
                                   ],
                                 ),
                               ),

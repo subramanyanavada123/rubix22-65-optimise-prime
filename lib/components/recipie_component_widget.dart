@@ -37,24 +37,25 @@ class RecipieComponentWidget extends StatelessWidget {
             style: FlutterFlowTheme.title2,
           ),
           Text(
-            'Ingrdients',
+            'Ingridients',
             style: FlutterFlowTheme.title3,
           ),
-          // if(values.containsKey('ingredients'))
-          //     ListView.builder(
-          //     // Let the ListView know how many items it needs to build.
-          //     itemCount: values['ingredients'].length,
-          //     // Provide a builder function. This is where the magic happens.
-          //     // Convert each item into a widget based on the type of item it is.
-          //     itemBuilder: (context, index) {
-          //       final item = values['ingredients'][index];
+          if(values.containsKey('ingredients'))
+              new Flexible(
+                child: ListView.builder(
+                // Let the ListView know how many items it needs to build.
+                itemCount: values['ingredients'].length,
+                // Provide a builder function. This is where the magic happens.
+                // Convert each item into a widget based on the type of item it is.
+                itemBuilder: (context, index) {
+                  final item = values['ingredients'][index];
 
-          //       return ListTile(
-          //         title: item.buildTitle(context),
-          //         subtitle: item.buildSubtitle(context),
-          //       );
-          //     },
-          //   ),
+                  return ListTile(
+                    title: Text(item['name']),
+                  );
+                },
+            ),
+              ),
           Text(
             values['step'],
             style: FlutterFlowTheme.bodyText1,
