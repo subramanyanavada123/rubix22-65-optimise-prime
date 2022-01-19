@@ -13,15 +13,13 @@ class RecipiesearchComponentWidget extends StatefulWidget {
 
 class _RecipiesearchComponentWidgetState
     extends State<RecipiesearchComponentWidget> {
-  double ratingBarValue;
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
       child: Container(
-        width: 150,
-        height: 150,
+        width: MediaQuery.of(context).size.width * 0.95,
+        height: 120,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,
           boxShadow: [
@@ -34,71 +32,81 @@ class _RecipiesearchComponentWidgetState
         ),
         child: Row(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  width: 150,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFEEEEEE),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: Image.asset(
-                        'assets/images/try1.jpg',
-                      ).image,
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: Image.asset(
+                          'assets/images/try1.jpg',
+                        ).image,
+                      ),
+                      borderRadius: BorderRadius.circular(0),
                     ),
-                    borderRadius: BorderRadius.circular(20),
                   ),
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'DIsh name',
-                      style: FlutterFlowTheme.title2.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.primaryColor,
-                        fontSize: 18,
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Dish name',
+                        style: FlutterFlowTheme.title1.override(
+                          fontFamily: 'Poppins',
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'Type',
-                      style: FlutterFlowTheme.bodyText1.override(
-                        fontFamily: 'Poppins',
-                        color: FlutterFlowTheme.primaryColor,
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Type',
+                        style: FlutterFlowTheme.subtitle2,
                       ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    // RatingBar.builder(
-                    //   onRatingUpdate: (newValue) =>
-                    //       setState(() => ratingBarValue = newValue),
-                    //   itemBuilder: (context, index) => Icon(
-                    //     Icons.star_rounded,
-                    //     color: FlutterFlowTheme.secondaryColor,
-                    //   ),
-                    //   direction: Axis.horizontal,
-                    //   initialRating: ratingBarValue ??= 3,
-                    //   unratedColor: Color(0xFF9E9E9E),
-                    //   itemCount: 5,
-                    //   itemSize: 15,
-                    //   glowColor: FlutterFlowTheme.secondaryColor,
-                    // ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Fat Content',
+                        style: FlutterFlowTheme.bodyText1,
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        child: Text(
+                          'High',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.primaryColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
