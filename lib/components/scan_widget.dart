@@ -137,8 +137,6 @@ class _ScanWidgetState extends State<ScanWidget> {
                           decoration: InputDecoration(
                             labelText: 'Cost',
                             labelStyle: FlutterFlowTheme.bodyText1,
-                            hintText: '130',
-                            hintStyle: FlutterFlowTheme.bodyText1,
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -189,10 +187,11 @@ class _ScanWidgetState extends State<ScanWidget> {
                           controller: textController3,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Expiry date',
-                            labelStyle: FlutterFlowTheme.bodyText1,
-                            hintText: 'DD/MM/YY',
-                            hintStyle: FlutterFlowTheme.bodyText1,
+                            labelText: 'DD/MM/YY',
+                            labelStyle: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                              fontSize: 10,
+                            ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0x00000000),
@@ -214,7 +213,10 @@ class _ScanWidgetState extends State<ScanWidget> {
                               ),
                             ),
                           ),
-                          style: FlutterFlowTheme.bodyText1,
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontSize: 10,
+                          ),
                         ),
                       ),
                     ),
