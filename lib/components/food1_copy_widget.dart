@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,7 +26,7 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
       padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
       child: Container(
         width: MediaQuery.of(context).size.width * 0.95,
-        height: 100,
+        height: 80,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,
           boxShadow: [
@@ -36,7 +37,7 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
           ],
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: Color(0xFF0E6CAD),
+            color: Color(0xA4FFFFFF),
           ),
         ),
         child: Row(
@@ -112,7 +113,7 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -140,7 +141,31 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    children: [],
+                    children: [
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                        child: FFButtonWidget(
+                          onPressed: () {
+                            print('Button pressed ...');
+                          },
+                          text: 'view',
+                          options: FFButtonOptions(
+                            width: 80,
+                            height: 30,
+                            color: FlutterFlowTheme.primaryColor,
+                            textStyle: FlutterFlowTheme.subtitle2.override(
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
+                            ),
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1,
+                            ),
+                            borderRadius: 0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
