@@ -13,7 +13,14 @@ class Food2Widget extends StatefulWidget {
 }
 
 class _Food2WidgetState extends State<Food2Widget> {
+  TextEditingController textController;
   int countControllerValue;
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -142,11 +149,40 @@ class _Food2WidgetState extends State<Food2Widget> {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Text(
-                        'dd/mm/yy',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFFE21A1A),
+                      Container(
+                        width: 100,
+                        height: 20,
+                        decoration: BoxDecoration(
+                          color: Color(0x00EEEEEE),
+                        ),
+                        child: TextFormField(
+                          controller: textController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintText: 'dd/mm/yy',
+                            hintStyle: FlutterFlowTheme.bodyText1,
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style: FlutterFlowTheme.bodyText1,
                         ),
                       ),
                     ],
