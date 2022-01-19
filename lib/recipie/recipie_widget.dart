@@ -3,6 +3,10 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+
 
 class RecipieWidget extends StatefulWidget {
   const RecipieWidget({Key key}) : super(key: key);
@@ -14,9 +18,28 @@ class RecipieWidget extends StatefulWidget {
 class _RecipieWidgetState extends State<RecipieWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  String url = "https://api.spoonacular.com/recipes/324694/analyzedInstructions&apiKey=API-KEY";
+  PageController pageViewController;
 
-  final response = await http.get(Uri.parse(url));
+  var recipes;
+  bool present;
+
+  void initState() {
+    super.initState();
+    getData();
+  }
+
+  void getData() async{
+    String url =
+        "https://api.spoonacular.com/recipes/324694/analyzedInstructions&apiKey=API-KEY";
+
+    final response = await http.get(Uri.parse(url));
+    var data = json.decode(response.body);
+        print(data);
+        setState(() {
+          recipes = data;
+          present = true;
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,12 +125,61 @@ class _RecipieWidgetState extends State<RecipieWidget> {
                       color: Color(0xFFFFF1BD),
                     ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      RecipieComponentWidget(),
-                    ],
+              Row(  
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: Container(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * 1,
+                    child: Stack(
+                      children: [
+                        PageView(
+                          controller: pageViewController ??=
+                              PageController(initialPage: 0),
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            ...(test).map((a){
+                              return Temp1Widget(page_no: a);
+                            })
+                          ]
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0, 1),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                            child: SmoothPageIndicator(
+                              controller: pageViewController ??=
+                                  PageController(initialPage: 0),
+                              count: test.length,
+                              axisDirection: Axis.horizontal,
+                              onDotClicked: (i) {
+                                pageViewController.animateToPage(
+                                  i,
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.ease,
+                                );
+                              },
+                              effect: ExpandingDotsEffect(
+                                expansionFactor: 2,
+                                spacing: 8,
+                                radius: 16,
+                                dotWidth: 16,
+                                dotHeight: 4,
+                                dotColor: Color(0x8AC6CAD4),
+                                activeDotColor: Colors.white,
+                                paintStyle: PaintingStyle.fill,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+                ),
+              ],
+            ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                     child: Row(
