@@ -1,4 +1,3 @@
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,7 @@ class RecipieComponentWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.85,
       height: MediaQuery.of(context).size.height * 0.65,
       decoration: BoxDecoration(
-        color: Color(0xFFCDDEFF),
+        color: FlutterFlowTheme.tertiaryColor,
         boxShadow: [
           BoxShadow(
             blurRadius: 5,
@@ -59,26 +58,6 @@ class RecipieComponentWidget extends StatelessWidget {
           Text(
             values['step'],
             style: FlutterFlowTheme.bodyText1,
-          ),
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30,
-                borderWidth: 1,
-                buttonSize: 60,
-                icon: Icon(
-                  Icons.mic,
-                  color: Colors.black,
-                  size: 30,
-                ),
-                onPressed: () {
-                  print('IconButton pressed ...');
-                },
-              ),
-            ],
           ),
         ],
       ),
