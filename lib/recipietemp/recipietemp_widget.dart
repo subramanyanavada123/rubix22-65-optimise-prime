@@ -29,7 +29,6 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
   }
 
   void getData() async {
-    const API_KEY = "8afaaf5604f4495fa9e9b52c1fb6a8ef";
     // String url =
     //     "https://api.spoonacular.com/recipes/324694/analyzedInstructions?apiKey=" + API_KEY;
 

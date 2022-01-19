@@ -37,7 +37,7 @@ class RecipieComponentWidget extends StatelessWidget {
             style: FlutterFlowTheme.title2,
           ),
           Text(
-            'Ingridients',
+            'Ingredients',
             style: FlutterFlowTheme.title3,
           ),
           if(values.containsKey('ingredients'))
