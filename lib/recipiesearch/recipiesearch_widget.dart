@@ -1,4 +1,4 @@
-import '../components/food3_widget.dart';
+import '../components/recipiesearch_component_widget.dart';
 import '../components/search_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -33,7 +33,13 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
                   decoration: BoxDecoration(),
                   child: SearchWidget(),
                 ),
-                Food3Widget(),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    RecipiesearchComponentWidget(),
+                    RecipiesearchComponentWidget(),
+                  ],
+                ),
               ],
             ),
           ],

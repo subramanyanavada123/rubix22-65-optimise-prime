@@ -32,9 +32,15 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
-                  child: Lists2Widget(),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 70),
+                    child: Lists2Widget(),
+                  ),
                 ),
-                CalenderWidget(),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 150),
+                  child: CalenderWidget(),
+                ),
               ],
             ),
           ],

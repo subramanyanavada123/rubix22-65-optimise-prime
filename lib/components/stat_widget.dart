@@ -18,7 +18,7 @@ class _StatWidgetState extends State<StatWidget> {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
       child: Container(
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.of(context).size.width * 0.9,
         height: 100,
         decoration: BoxDecoration(
           color: Color(0xFF00063D),
