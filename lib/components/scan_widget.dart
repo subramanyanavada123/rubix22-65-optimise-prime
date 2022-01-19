@@ -1,3 +1,4 @@
+import '../cart/cart_widget.dart';
 import '../flutter_flow/flutter_flow_count_controller.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -266,8 +267,13 @@ class _ScanWidgetState extends State<ScanWidget> {
                   ),
                 ),
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CartWidget(),
+                      ),
+                    );
                   },
                   text: 'Save',
                   options: FFButtonOptions(
