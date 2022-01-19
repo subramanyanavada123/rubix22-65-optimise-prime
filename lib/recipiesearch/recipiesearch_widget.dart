@@ -1,4 +1,5 @@
 import '../components/food1_copy_widget.dart';
+import '../components/search_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,11 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
             Column(
               mainAxisSize: MainAxisSize.max,
               children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  decoration: BoxDecoration(),
+                  child: SearchWidget(),
+                ),
                 Food1CopyWidget(),
               ],
             ),

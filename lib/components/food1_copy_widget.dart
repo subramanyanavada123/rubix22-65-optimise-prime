@@ -45,11 +45,12 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 20, 10, 80),
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(2),
                     child: Image.network(
