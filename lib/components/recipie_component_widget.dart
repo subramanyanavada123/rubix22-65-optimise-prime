@@ -26,14 +26,14 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
       width: MediaQuery.of(context).size.width * 0.85,
       height: MediaQuery.of(context).size.height * 0.65,
       decoration: BoxDecoration(
-        color: Color(0xFFCDDEFF),
+        color: FlutterFlowTheme.tertiaryColor,
         boxShadow: [
           BoxShadow(
             blurRadius: 5,
             color: FlutterFlowTheme.tertiaryColor,
           )
         ],
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(0),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
