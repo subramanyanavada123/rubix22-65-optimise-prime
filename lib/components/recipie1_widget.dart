@@ -12,6 +12,14 @@ class Recipie1Widget extends StatefulWidget {
 }
 
 class _Recipie1WidgetState extends State<Recipie1Widget> {
+  TextEditingController textController;
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -90,6 +98,41 @@ class _Recipie1WidgetState extends State<Recipie1Widget> {
                                           offset: Offset(1, 0),
                                         )
                                       ],
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10, 10, 10, 10),
+                                      child: TextFormField(
+                                        controller: textController,
+                                        obscureText: false,
+                                        decoration: InputDecoration(
+                                          hintText: '[Some hint text...]',
+                                          hintStyle: FlutterFlowTheme.bodyText1,
+                                          enabledBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(4.0),
+                                              topRight: Radius.circular(4.0),
+                                            ),
+                                          ),
+                                          focusedBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                              color: Color(0x00000000),
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(4.0),
+                                              topRight: Radius.circular(4.0),
+                                            ),
+                                          ),
+                                        ),
+                                        style: FlutterFlowTheme.bodyText1,
+                                      ),
                                     ),
                                   ),
                                   Text(
