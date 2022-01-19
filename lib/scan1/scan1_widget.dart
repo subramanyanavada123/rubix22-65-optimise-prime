@@ -27,121 +27,123 @@ class _Scan1WidgetState extends State<Scan1Widget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
-      body: SafeArea(
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.tertiaryColor,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                            child: Row(
+      body: SingleChildScrollView(
+              child: SafeArea(
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.tertiaryColor,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.9,
+                                    height:
+                                        MediaQuery.of(context).size.height * 0.25,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.tertiaryColor,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 10,
+                                          color: Color(0xFFAECAFE),
+                                        )
+                                      ],
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Upload',
+                                          style: FlutterFlowTheme.bodyText1,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.9,
+                                  width: MediaQuery.of(context).size.width * 0.9,
                                   height:
                                       MediaQuery.of(context).size.height * 0.25,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.tertiaryColor,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 10,
-                                        color: Color(0xFFAECAFE),
-                                      )
-                                    ],
+                                    color: Color(0xFFEEEEEE),
                                   ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Upload',
-                                        style: FlutterFlowTheme.bodyText1,
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 5, 0, 0),
+                                    child: TextFormField(
+                                      controller: textController,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        hintText: '[Some hint text...]',
+                                        hintStyle: FlutterFlowTheme.bodyText1,
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
+                                        filled: true,
+                                        fillColor: Color(0xFFB4DFF5),
                                       ),
-                                    ],
+                                      style: FlutterFlowTheme.bodyText1,
+                                      maxLines: 10,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                height:
-                                    MediaQuery.of(context).size.height * 0.25,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFEEEEEE),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 5, 0, 0),
-                                  child: TextFormField(
-                                    controller: textController,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      hintText: '[Some hint text...]',
-                                      hintStyle: FlutterFlowTheme.bodyText1,
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      filled: true,
-                                      fillColor: Color(0xFFB4DFF5),
-                                    ),
-                                    style: FlutterFlowTheme.bodyText1,
-                                    maxLines: 10,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                ScanWidget(),
-              ],
-            ),
-          ],
+                  ScanWidget(),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

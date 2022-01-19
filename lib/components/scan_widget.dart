@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/cupertino.dart';
 
 class ScanWidget extends StatefulWidget {
   const ScanWidget({Key key}) : super(key: key);
@@ -20,6 +21,8 @@ class _ScanWidgetState extends State<ScanWidget> {
   TextEditingController textController2;
   TextEditingController textController3;
   int countControllerValue;
+
+  DateTime expiry_date;
 
   @override
   void initState() {
@@ -183,39 +186,18 @@ class _ScanWidgetState extends State<ScanWidget> {
                       ),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                        child: TextFormField(
-                          controller: textController3,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                            labelText: 'DD/MM/YY',
-                            labelStyle: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 10,
-                            ),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1,
-                              ),
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(4.0),
-                                topRight: Radius.circular(4.0),
-                              ),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Color(0x00000000),
-                                width: 1,
-                              ),
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(4.0),
-                                topRight: Radius.circular(4.0),
-                              ),
-                            ),
-                          ),
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'Poppins',
-                            fontSize: 10,
+                        child: Container(
+                          height: 200,
+                          child: CupertinoDatePicker(
+                            mode: CupertinoDatePickerMode.date,
+                            initialDateTime: DateTime(1969, 1, 1),
+                            onDateTimeChanged: (DateTime newDateTime) {
+                              // Do something
+                              print(newDateTime);
+                              setState((){
+                                expiry_date = newDateTime;
+                              });
+                            },
                           ),
                         ),
                       ),
