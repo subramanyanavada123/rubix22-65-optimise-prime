@@ -127,12 +127,13 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                       color: Color(0xFFFFF1BD),
                     ),
                   ),
+                  if(present)
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.95,
-                        height: MediaQuery.of(context).size.height * 0.6,
+                        width: MediaQuery.of(context).size.width * 1,
+                        height: MediaQuery.of(context).size.height * 0.8,
                         decoration: BoxDecoration(
                           color: Color(0xFFEEEEEE),
                         ),
@@ -141,7 +142,6 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                           height: 500,
                           child: Stack(
                             children: [
-                              if(present)
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
@@ -166,7 +166,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                                   child: SmoothPageIndicator(
                                     controller: pageViewController ??=
                                         PageController(initialPage: 0),
-                                    count: 3,
+                                    count: recipes[0]['steps'].length,
                                     axisDirection: Axis.horizontal,
                                     onDotClicked: (i) {
                                       pageViewController.animateToPage(
@@ -193,80 +193,6 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                         ),
                       ),
                     ],
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 50, 0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Icon(
-                                Icons.chevron_left,
-                                color: FlutterFlowTheme.tertiaryColor,
-                                size: 40,
-                              ),
-                              Text(
-                                'Back',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
-                              child: Icon(
-                                Icons.support_agent_outlined,
-                                color: FlutterFlowTheme.tertiaryColor,
-                                size: 35,
-                              ),
-                            ),
-                            Text(
-                              'Support',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.tertiaryColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
-                              child: Icon(
-                                Icons.navigate_next,
-                                color: FlutterFlowTheme.tertiaryColor,
-                                size: 40,
-                              ),
-                            ),
-                            Text(
-                              'Next',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.tertiaryColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
                   ),
                 ],
               ),

@@ -50,6 +50,7 @@ class RecipieComponentWidget extends StatelessWidget {
                   final item = values['ingredients'][index];
 
                   return ListTile(
+                    leading: Icon(Icons.circle),
                     title: Text(item['name']),
                   );
                 },
