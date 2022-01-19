@@ -63,7 +63,7 @@ class _Scan1WidgetState extends State<Scan1Widget> {
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
-                                  text: 'Scan now',
+                                  text: 'Scan',
                                   options: FFButtonOptions(
                                     width: 130,
                                     height: 40,
