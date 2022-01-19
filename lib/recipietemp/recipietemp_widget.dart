@@ -1,3 +1,4 @@
+import '../components/recipie_component_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -92,96 +93,109 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                       ],
                     ),
                   ),
-                  Text(
-                    'Recipie names',
-                    style: FlutterFlowTheme.title2.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0xFFFFF1BD),
-                    ),
-                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.95,
-                        height: MediaQuery.of(context).size.height * 0.6,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFEEEEEE),
-                        ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                         child: Container(
-                          width: double.infinity,
-                          height: 400,
-                          child: Stack(
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
-                                child: PageView(
-                                  controller: pageViewController ??=
-                                      PageController(initialPage: 0),
-                                  scrollDirection: Axis.horizontal,
-                                  children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Hello World',
-                                          style: FlutterFlowTheme.bodyText1,
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Hello World',
-                                          style: FlutterFlowTheme.bodyText1,
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Text(
-                                          'Hello World',
-                                          style: FlutterFlowTheme.bodyText1,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Align(
-                                alignment: AlignmentDirectional(0, 1),
-                                child: Padding(
+                          width: MediaQuery.of(context).size.width * 0.95,
+                          height: MediaQuery.of(context).size.height * 0.63,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFEEEEEE),
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 4,
+                                color: Color(0xFFAEE1E1),
+                              )
+                            ],
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Container(
+                            width: double.infinity,
+                            height: 400,
+                            child: Stack(
+                              children: [
+                                Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 10),
-                                  child: SmoothPageIndicator(
+                                      0, 0, 0, 50),
+                                  child: PageView(
                                     controller: pageViewController ??=
                                         PageController(initialPage: 0),
-                                    count: 3,
-                                    axisDirection: Axis.horizontal,
-                                    onDotClicked: (i) {
-                                      pageViewController.animateToPage(
-                                        i,
-                                        duration: Duration(milliseconds: 500),
-                                        curve: Curves.ease,
-                                      );
-                                    },
-                                    effect: ExpandingDotsEffect(
-                                      expansionFactor: 2,
-                                      spacing: 8,
-                                      radius: 16,
-                                      dotWidth: 16,
-                                      dotHeight: 16,
-                                      dotColor: Color(0xFF9E9E9E),
-                                      activeDotColor: Color(0xFF3F51B5),
-                                      paintStyle: PaintingStyle.fill,
+                                    scrollDirection: Axis.horizontal,
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 10, 0, 0),
+                                            child: Text(
+                                              'Recipie Name',
+                                              style: FlutterFlowTheme.title2
+                                                  .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                          ),
+                                          RecipieComponentWidget(),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            'Hello World',
+                                            style: FlutterFlowTheme.bodyText1,
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            'Hello World',
+                                            style: FlutterFlowTheme.bodyText1,
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0, 1),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 0, 0, 10),
+                                    child: SmoothPageIndicator(
+                                      controller: pageViewController ??=
+                                          PageController(initialPage: 0),
+                                      count: 3,
+                                      axisDirection: Axis.horizontal,
+                                      onDotClicked: (i) {
+                                        pageViewController.animateToPage(
+                                          i,
+                                          duration: Duration(milliseconds: 500),
+                                          curve: Curves.ease,
+                                        );
+                                      },
+                                      effect: ExpandingDotsEffect(
+                                        expansionFactor: 2,
+                                        spacing: 8,
+                                        radius: 16,
+                                        dotWidth: 16,
+                                        dotHeight: 16,
+                                        dotColor: Color(0xFF9E9E9E),
+                                        activeDotColor: Color(0xFF3F51B5),
+                                        paintStyle: PaintingStyle.fill,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -201,16 +215,17 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
                               child: Icon(
-                                Icons.support_agent_outlined,
+                                Icons.mic,
                                 color: FlutterFlowTheme.tertiaryColor,
                                 size: 35,
                               ),
                             ),
                             Text(
-                              'Support',
+                              'Audible',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.tertiaryColor,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],

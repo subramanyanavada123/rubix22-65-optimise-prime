@@ -6,7 +6,6 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../home_page/home_page_widget.dart';
 import '../kitchen/kitchen_widget.dart';
 import '../landing/landing_widget.dart';
-import '../recipie/recipie_widget.dart';
 import '../recipiesearch/recipiesearch_widget.dart';
 import '../scan1/scan1_widget.dart';
 import 'package:flutter/material.dart';
@@ -162,13 +161,8 @@ class _LinkWidgetState extends State<LinkWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FFButtonWidget(
-                    onPressed: () async {
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RecipieWidget(),
-                        ),
-                      );
+                    onPressed: () {
+                      print('Button pressed ...');
                     },
                     text: 'Button',
                     options: FFButtonOptions(
