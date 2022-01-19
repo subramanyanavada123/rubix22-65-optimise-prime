@@ -5,15 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Recipie1Widget extends StatelessWidget {
-
   TextEditingController textController1 = TextEditingController();
   TextEditingController textController2 = TextEditingController();
 
   var steps;
   var info;
 
-  Recipie1Widget(this.steps,this.info);
-
+  Recipie1Widget(this.steps, this.info);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class Recipie1Widget extends StatelessWidget {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
             child: Text(
-              'Recipie Name',
+              info['title'],
               style: FlutterFlowTheme.title1,
             ),
           ),
@@ -41,10 +39,9 @@ class Recipie1Widget extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Recipie2Widget(),
-                  Recipie2Widget(),
-                  Recipie2Widget(),
-                  Recipie2Widget(),
+                  ...(info['extendedIngredients']).map((ing){
+                      return Recipie2Widget(ing);
+                  })
                 ],
               ),
             ),
@@ -94,35 +91,6 @@ class Recipie1Widget extends StatelessWidget {
                                         )
                                       ],
                                     ),
-                                    child: TextFormField(
-                                      controller: textController1,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        hintText: '[Some hint text...]',
-                                        hintStyle: FlutterFlowTheme.bodyText1,
-                                        enabledBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                        focusedBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                      ),
-                                      style: FlutterFlowTheme.bodyText1,
-                                    ),
                                   ),
                                   Text(
                                     'Steps',
@@ -145,41 +113,21 @@ class Recipie1Widget extends StatelessWidget {
                                       ],
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: TextFormField(
-                                      controller: textController2,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        hintText: '[Some hint text...]',
-                                        hintStyle:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          lineHeight: 30,
-                                        ),
-                                        enabledBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                        focusedBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                      ),
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        lineHeight: 30,
+                                    child: Flexible(
+                                      child: ListView.builder(
+                                        // Let the ListView know how many items it needs to build.
+                                        itemCount: steps['steps'].length,
+                                        // Provide a builder function. This is where the magic happens.
+                                        // Convert each item into a widget based on the type of item it is.
+                                        itemBuilder: (context, index) {
+                                          final item =
+                                              steps['steps'][index];
+
+                                          return ListTile(
+                                            leading: Text(item['number'].toString()),
+                                            title: Text(item['step']),
+                                          );
+                                        },
                                       ),
                                     ),
                                   ),

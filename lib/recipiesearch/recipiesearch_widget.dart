@@ -15,6 +15,7 @@ class RecipiesearchWidget extends StatefulWidget {
 }
 
 class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
+  TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   var items;
@@ -46,6 +47,12 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
@@ -61,6 +68,44 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
                 Container(
                   width: MediaQuery.of(context).size.width * 0.95,
                   decoration: BoxDecoration(),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFEEEEEE),
+                  ),
+                  child: TextFormField(
+                    controller: textController,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      hintStyle: FlutterFlowTheme.bodyText1,
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color(0x00000000),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      filled: true,
+                      fillColor: FlutterFlowTheme.tertiaryColor,
+                      contentPadding:
+                          EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: FlutterFlowTheme.primaryColor,
+                      ),
+                    ),
+                    style: FlutterFlowTheme.bodyText1,
+                  ),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,

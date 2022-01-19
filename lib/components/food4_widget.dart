@@ -143,9 +143,20 @@ class _Food4WidgetState extends State<Food4Widget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                    child: Text(
+                      'Donate',
+                      style: FlutterFlowTheme.bodyText1.override(
+                        fontFamily: 'Poppins',
+                        color: Color(0xFF6A9106),
+                        fontSize: 10,
+                      ),
+                    ),
+                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [

@@ -27,7 +27,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
   }
 
   void getData() async {
-    var id = "324694";
+    var id = "716429";
     var API_KEY = "8afaaf5604f4495fa9e9b52c1fb6a8ef";
     String url =
         "https://api.spoonacular.com/recipes/" + id + "/analyzedInstructions?apiKey=" + API_KEY;
@@ -95,7 +95,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     if(present)
-                      Recipie1Widget(steps, recipeInfo),
+                      Recipie1Widget(steps[0], recipeInfo),
                   ],
                 ),
               ],

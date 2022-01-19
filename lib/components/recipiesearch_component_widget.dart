@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../recipietemp/recipietemp_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -96,6 +97,28 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.primaryColor,
                             fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RecipietempWidget(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'View',
+                          style: FlutterFlowTheme.subtitle1.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF6A9106),
                           ),
                         ),
                       ),

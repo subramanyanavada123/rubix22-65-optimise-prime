@@ -3,14 +3,11 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Recipie2Widget extends StatefulWidget {
-  const Recipie2Widget({Key key}) : super(key: key);
+class Recipie2Widget extends StatelessWidget {
+  
+  var values;
+  Recipie2Widget(this.values);
 
-  @override
-  _Recipie2WidgetState createState() => _Recipie2WidgetState();
-}
-
-class _Recipie2WidgetState extends State<Recipie2Widget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,7 +38,8 @@ class _Recipie2WidgetState extends State<Recipie2Widget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Ingredient\n name',
+                  values['name'],
+                  overflow: TextOverflow.ellipsis,
                   style: FlutterFlowTheme.title2.override(
                     fontFamily: 'Lato',
                     fontSize: 18,
@@ -55,7 +53,7 @@ class _Recipie2WidgetState extends State<Recipie2Widget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '3',
+                  values['amount'].toString(),
                   style: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Poppins',
                     color: FlutterFlowTheme.primaryColor,
@@ -69,7 +67,7 @@ class _Recipie2WidgetState extends State<Recipie2Widget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'TT',
+                  values['unit'],
                   style: FlutterFlowTheme.bodyText1.override(
                     fontFamily: 'Open Sans',
                     fontWeight: FontWeight.w600,
