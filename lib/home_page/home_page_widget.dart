@@ -24,66 +24,53 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       body: SafeArea(
         child: Row(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 StatWidget(),
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.95,
-                      height: 450,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(1, 1, 1, 1),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.98,
+                        height: 450,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.tertiaryColor,
+                        ),
+                        child: Home2Widget(),
                       ),
-                      child: Home2Widget(),
                     ),
                   ],
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Column(
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        width: 600,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFEEEEEE),
+                        ),
+                        child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Container(
-                              width: 320,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
-                              ),
+                            Expanded(
+                              child: Home1Widget(),
+                            ),
+                            Expanded(
                               child: Home1Widget(),
                             ),
                           ],
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Container(
-                              width: 320,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
-                              ),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                                child: Home1Widget(),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],

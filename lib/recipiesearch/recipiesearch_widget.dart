@@ -37,7 +37,6 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     RecipiesearchComponentWidget(),
-                    RecipiesearchComponentWidget(),
                   ],
                 ),
               ],
