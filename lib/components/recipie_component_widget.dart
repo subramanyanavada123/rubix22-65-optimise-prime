@@ -29,21 +29,30 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30,
-            borderWidth: 1,
-            buttonSize: 60,
-            icon: Icon(
-              Icons.mic,
-              color: Colors.black,
-              size: 30,
-            ),
-            onPressed: () {
-              print('IconButton pressed ...');
-            },
+          Text(
+            'Hello World',
+            style: FlutterFlowTheme.bodyText1,
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 30,
+                borderWidth: 1,
+                buttonSize: 60,
+                icon: Icon(
+                  Icons.mic,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                onPressed: () {
+                  print('IconButton pressed ...');
+                },
+              ),
+            ],
           ),
         ],
       ),
