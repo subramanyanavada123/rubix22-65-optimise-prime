@@ -16,7 +16,7 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.85,
-      height: MediaQuery.of(context).size.height * 0.55,
+      height: MediaQuery.of(context).size.height * 0.65,
       decoration: BoxDecoration(
         color: Color(0xFFCDDEFF),
         boxShadow: [
@@ -31,7 +31,15 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Text(
-            'Hello World',
+            'Heading',
+            style: FlutterFlowTheme.title2,
+          ),
+          Text(
+            'Ingrdients',
+            style: FlutterFlowTheme.title3,
+          ),
+          Text(
+            'Steps',
             style: FlutterFlowTheme.bodyText1,
           ),
           Column(
@@ -53,10 +61,6 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
                 },
               ),
             ],
-          ),
-          Text(
-            'Hello World',
-            style: FlutterFlowTheme.bodyText1,
           ),
         ],
       ),
