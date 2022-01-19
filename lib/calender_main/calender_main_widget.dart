@@ -1,4 +1,5 @@
 import '../components/calender_widget.dart';
+import '../components/lists2_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -21,19 +22,17 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFEEF2FF),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                Expanded(
+                  child: Lists2Widget(),
                 ),
                 CalenderWidget(),
               ],
