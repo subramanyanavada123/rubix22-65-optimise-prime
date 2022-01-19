@@ -103,33 +103,31 @@ try {
           size: 30,
         ),
       ),
-      body: SingleChildScrollView(
-              child: SafeArea(
+      body: SafeArea(
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 1,
-                decoration: BoxDecoration(
-                  color: Color(0xFFEEEEEE),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    StatWidget(),
-                    Expanded(
-                      child: 
-                        present ? Lists1Widget(thisWeek: thisWeek, nextWeek: nextWeek, later: later) : Text(""),
-                    ),
-                  ],
-                ),
-              ),
+      Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height * 1,
+        decoration: BoxDecoration(
+          color: Color(0xFFEEEEEE),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            StatWidget(),
+            Expanded(
+              child: 
+                present ? Lists1Widget(thisWeek: thisWeek, nextWeek: nextWeek, later: later) : Text(""),
+            ),
+          ],
+        ),
+      ),
             ],
           ),
         ),
-      ),
     );
   }
 }

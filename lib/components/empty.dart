@@ -26,14 +26,14 @@ class _ConfirmWidgetState extends State<ConfirmWidget> {
               width: 250,
               height: 250,
               decoration: BoxDecoration(
-                color: Color(0xFFF5F5F5),
+                color: Colors.white,
               ),
               child: Lottie.asset(
-                'assets/lottie_animations/live box empty.json',
+                'assets/lottie_animations/box3.json',
                 width: 200,
                 height: 250,
                 fit: BoxFit.cover,  
-                repeat: false,
+                repeat: true,
                 animate: true,
               ),
             ),

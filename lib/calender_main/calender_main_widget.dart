@@ -127,7 +127,7 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
                         color: Color(0xFFF5F5F5),
                       ),
                       child: Lottie.asset(
-                        'assets/lottie_animations/open and close box.json',
+                        'assets/lottie_animations/box1.json',
                         fit: BoxFit.cover,
                         repeat: true,
                       ),

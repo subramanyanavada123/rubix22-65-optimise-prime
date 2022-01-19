@@ -157,7 +157,8 @@ class _ChatPageState extends State<ChatPage> {
     _addMessage(textMessage);
 
     var msg;
-    String url = "http://192.168.0.192:5000/" + "api/chatbot";
+    // String url = "http://192.168.0.192:5000/" + "api/chatbot";
+    String url = "https://api.spoonacular.com/food/converse?text="+ message.text + "&contextId=1245&apiKey=8afaaf5604f4495fa9e9b52c1fb6a8ef";
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       // print(response.body);

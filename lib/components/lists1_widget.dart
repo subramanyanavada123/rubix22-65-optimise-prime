@@ -33,85 +33,56 @@ class _Lists1WidgetState extends State<Lists1Widget> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Row(
+          child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                height: MediaQuery.of(context).size.height * 1,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.tertiaryColor,
-                ),
-                child: DefaultTabController(
-                  length: 3,
-                  initialIndex: 0,
-                  child: Column(
-                    children: [
-                      TabBar(
-                        labelColor: Color(0xFF00063D),
-                        unselectedLabelColor: FlutterFlowTheme.primaryColor,
-                        labelStyle: FlutterFlowTheme.bodyText1,
-                        indicatorColor: FlutterFlowTheme.secondaryColor,
-                        tabs: [
-                          Tab(
-                            text: 'This Week',
-                          ),
-                          Tab(
-                            text: 'Next Week',
-                          ),
-                          Tab(
-                            text: 'Later',
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        child: TabBarView(
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    if (thisWeek != null)
-                                      ...(thisWeek).map((item) {
-                                        try {
-                                          var date = DateTime.parse(
-                                              item['expiry_date']);
-                                          var formatter =
-                                              DateFormat('dd-MM-yyyy');
-                                          String formatted =
-                                              formatter.format(date);
-                                          item['expiry_date'] = formatted;
-                                        } catch (e) {
-                                          print(e);
-                                        }
-                                        return Food1Widget(item);
-                                      })
-                                    else
-                                      ConfirmWidget()
-                                  ],
-                                ),
-                              ],
+          SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  height: MediaQuery.of(context).size.height * 1,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.tertiaryColor,
+                  ),
+                  child: DefaultTabController(
+                    length: 3,
+                    initialIndex: 0,
+                    child: Column(
+                      children: [
+                        TabBar(
+                          labelColor: Color(0xFF00063D),
+                          unselectedLabelColor: FlutterFlowTheme.primaryColor,
+                          labelStyle: FlutterFlowTheme.bodyText1,
+                          indicatorColor: FlutterFlowTheme.secondaryColor,
+                          tabs: [
+                            Tab(
+                              text: 'This Week',
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SingleChildScrollView(
-                                  child: Column(
+                            Tab(
+                              text: 'Next Week',
+                            ),
+                            Tab(
+                              text: 'Later',
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: TabBarView(
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
                                     mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      if (nextWeek != null)
-                                        ...(nextWeek).map((item) {
+                                      if (thisWeek != null)
+                                        ...(thisWeek).map((item) {
                                           try {
                                             var date = DateTime.parse(
                                                 item['expiry_date']);
@@ -129,47 +100,78 @@ class _Lists1WidgetState extends State<Lists1Widget> {
                                         ConfirmWidget()
                                     ],
                                   ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    if (later != null)
-                                      ...(later).map((item) {
-                                        try {
-                                          var date = DateTime.parse(
-                                              item['expiry_date']);
-                                          var formatter =
-                                              DateFormat('dd-MM-yyyy');
-                                          String formatted =
-                                              formatter.format(date);
-                                          item['expiry_date'] = formatted;
-                                        } catch (e) {
-                                          print(e);
-                                        }
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        if (nextWeek.length > 0)
+                                          ...(nextWeek).map((item) {
+                                            try {
+                                              var date = DateTime.parse(
+                                                  item['expiry_date']);
+                                              var formatter =
+                                                  DateFormat('dd-MM-yyyy');
+                                              String formatted =
+                                                  formatter.format(date);
+                                              item['expiry_date'] = formatted;
+                                            } catch (e) {
+                                              print(e);
+                                            }
+                                            return Food1Widget(item);
+                                          })
+                                        else
+                                          ConfirmWidget()
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (later != null)
+                                        ...(later).map((item) {
+                                          try {
+                                            var date = DateTime.parse(
+                                                item['expiry_date']);
+                                            var formatter =
+                                                DateFormat('dd-MM-yyyy');
+                                            String formatted =
+                                                formatter.format(date);
+                                            item['expiry_date'] = formatted;
+                                          } catch (e) {
+                                            print(e);
+                                          }
 
-                                        return Food1Widget(item);
-                                      })
-                                    else
-                                      ConfirmWidget()
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
+                                          return Food1Widget(item);
+                                        })
+                                      else
+                                        ConfirmWidget()
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

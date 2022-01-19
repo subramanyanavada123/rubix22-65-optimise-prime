@@ -61,30 +61,30 @@ class Food1Widget extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        values['expiry_date'].compareTo(today.toString()) == -1 ? 'Expired' : "Active",
+                        values['item_name'],
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Lato',
-                          color: Color(0xFFE21A1A),
+                          color: Colors.green,
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        values['item_name'],
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Lato',
-                          color: Color(0xFF244F02),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.max,
+                  //   children: [
+                  //     Text(
+                  //       values['item_name'],
+                  //       style: FlutterFlowTheme.bodyText1.override(
+                  //         fontFamily: 'Lato',
+                  //         color: Color(0xFF244F02),
+                  //         fontSize: 15,
+                  //         fontWeight: FontWeight.w500,
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
