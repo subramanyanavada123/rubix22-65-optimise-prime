@@ -1,3 +1,5 @@
+import '../components/food1_widget.dart';
+import '../components/food3_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class _Lists1WidgetState extends State<Lists1Widget> {
               width: MediaQuery.of(context).size.width * 0.95,
               height: MediaQuery.of(context).size.height * 0.7,
               decoration: BoxDecoration(
-                color: Color(0xFFEEEEEE),
+                color: FlutterFlowTheme.tertiaryColor,
               ),
               child: DefaultTabController(
                 length: 3,
@@ -51,20 +53,44 @@ class _Lists1WidgetState extends State<Lists1Widget> {
                     Expanded(
                       child: TabBarView(
                         children: [
-                          Container(),
-                          Text(
-                            'Tab View 2',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 32,
-                            ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Food3Widget(),
+                                  Food3Widget(),
+                                ],
+                              ),
+                            ],
                           ),
-                          Text(
-                            'Tab View 3',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 32,
-                            ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Food3Widget(),
+                                  Food3Widget(),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Food1Widget(),
+                                ],
+                              ),
+                            ],
                           ),
                         ],
                       ),
