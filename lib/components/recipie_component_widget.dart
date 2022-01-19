@@ -4,21 +4,15 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RecipieComponentWidget extends StatefulWidget {
-  const RecipieComponentWidget({Key key}) : super(key: key);
+class RecipieComponentWidget extends StatelessWidget {
 
-  @override
-  _RecipieComponentWidgetState createState() => _RecipieComponentWidgetState();
-}
+  TextEditingController textController = TextEditingController();
 
-class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
-  TextEditingController textController;
+  var values;
+  var id;
+  RecipieComponentWidget(this.values);
 
-  @override
-  void initState() {
-    super.initState();
-    textController = TextEditingController(text: 'hello\nello\nbullo');
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -39,46 +33,30 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Text(
-            'Heading',
+            "Step " + values['number'].toString(),
             style: FlutterFlowTheme.title2,
           ),
           Text(
             'Ingrdients',
             style: FlutterFlowTheme.title3,
           ),
-          TextFormField(
-            controller: textController,
-            obscureText: false,
-            decoration: InputDecoration(
-              hintText: '[Some hint text...]',
-              hintStyle: FlutterFlowTheme.bodyText1,
-              enabledBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0x00000000),
-                  width: 1,
-                ),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(4.0),
-                  topRight: Radius.circular(4.0),
-                ),
-              ),
-              focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0x00000000),
-                  width: 1,
-                ),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(4.0),
-                  topRight: Radius.circular(4.0),
-                ),
-              ),
-              contentPadding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-            ),
-            style: FlutterFlowTheme.bodyText1,
-            maxLines: 5,
-          ),
+          // if(values.containsKey('ingredients'))
+          //     ListView.builder(
+          //     // Let the ListView know how many items it needs to build.
+          //     itemCount: values['ingredients'].length,
+          //     // Provide a builder function. This is where the magic happens.
+          //     // Convert each item into a widget based on the type of item it is.
+          //     itemBuilder: (context, index) {
+          //       final item = values['ingredients'][index];
+
+          //       return ListTile(
+          //         title: item.buildTitle(context),
+          //         subtitle: item.buildSubtitle(context),
+          //       );
+          //     },
+          //   ),
           Text(
-            'Steps',
+            values['step'],
             style: FlutterFlowTheme.bodyText1,
           ),
           Column(
