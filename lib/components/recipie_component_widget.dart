@@ -54,6 +54,10 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
               ),
             ],
           ),
+          Text(
+            'Hello World',
+            style: FlutterFlowTheme.bodyText1,
+          ),
         ],
       ),
     );
