@@ -1,5 +1,4 @@
 import '../components/recipiesearch_component_widget.dart';
-import '../components/search_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +60,6 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
                 Container(
                   width: MediaQuery.of(context).size.width * 0.95,
                   decoration: BoxDecoration(),
-                  child: SearchWidget(),
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
