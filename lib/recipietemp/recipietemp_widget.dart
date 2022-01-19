@@ -139,7 +139,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                         ),
                         child: Container(
                           width: double.infinity,
-                          height: 500,
+                          height: 400,
                           child: Stack(
                             children: [
                               Padding(
