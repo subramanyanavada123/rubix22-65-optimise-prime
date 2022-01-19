@@ -12,16 +12,6 @@ class Recipie1Widget extends StatefulWidget {
 }
 
 class _Recipie1WidgetState extends State<Recipie1Widget> {
-  TextEditingController textController1;
-  TextEditingController textController2;
-
-  @override
-  void initState() {
-    super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -101,35 +91,6 @@ class _Recipie1WidgetState extends State<Recipie1Widget> {
                                         )
                                       ],
                                     ),
-                                    child: TextFormField(
-                                      controller: textController1,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        hintText: '[Some hint text...]',
-                                        hintStyle: FlutterFlowTheme.bodyText1,
-                                        enabledBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                        focusedBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                      ),
-                                      style: FlutterFlowTheme.bodyText1,
-                                    ),
                                   ),
                                   Text(
                                     'Steps',
@@ -151,43 +112,6 @@ class _Recipie1WidgetState extends State<Recipie1Widget> {
                                         )
                                       ],
                                       borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: TextFormField(
-                                      controller: textController2,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        hintText: '[Some hint text...]',
-                                        hintStyle:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          lineHeight: 30,
-                                        ),
-                                        enabledBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                        focusedBorder: UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1,
-                                          ),
-                                          borderRadius: const BorderRadius.only(
-                                            topLeft: Radius.circular(4.0),
-                                            topRight: Radius.circular(4.0),
-                                          ),
-                                        ),
-                                      ),
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'Poppins',
-                                        lineHeight: 30,
-                                      ),
                                     ),
                                   ),
                                 ],
