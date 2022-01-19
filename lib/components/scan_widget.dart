@@ -33,7 +33,7 @@ class _ScanWidgetState extends State<ScanWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 140,
+      height: 160,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.tertiaryColor,
       ),
@@ -164,25 +164,18 @@ class _ScanWidgetState extends State<ScanWidget> {
                     ),
                   ],
                 ),
-              ],
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: 100,
+                      width: 140,
                       height: 30,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.tertiaryColor,
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                         child: TextFormField(
                           controller: textController3,
                           obscureText: false,
@@ -222,6 +215,13 @@ class _ScanWidgetState extends State<ScanWidget> {
                     ),
                   ],
                 ),
+              ],
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(1, 0, 0, 0),
                   child: Container(
