@@ -24,7 +24,7 @@ class _Lists1WidgetState extends State<Lists1Widget> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * 0.95,
-                height: 10000,
+                height: MediaQuery.of(context).size.height * 1,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.tertiaryColor,
                 ),
