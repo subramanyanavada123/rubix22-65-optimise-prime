@@ -92,7 +92,7 @@ class _RecipieWidgetState extends State<RecipieWidget> {
                     ),
                   ),
                   Text(
-                    'Recipie name',
+                    'Recipie names',
                     style: FlutterFlowTheme.title2.override(
                       fontFamily: 'Poppins',
                       color: Color(0xFFFFF1BD),
