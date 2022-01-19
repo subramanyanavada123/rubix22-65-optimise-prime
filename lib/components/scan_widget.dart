@@ -219,7 +219,7 @@ class _ScanWidgetState extends State<ScanWidget> {
             ),
             Column(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
