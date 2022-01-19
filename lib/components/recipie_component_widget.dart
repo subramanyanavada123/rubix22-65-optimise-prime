@@ -12,6 +12,14 @@ class RecipieComponentWidget extends StatefulWidget {
 }
 
 class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
+  TextEditingController textController;
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController(text: 'hello\nello\nbullo');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,6 +45,37 @@ class _RecipieComponentWidgetState extends State<RecipieComponentWidget> {
           Text(
             'Ingrdients',
             style: FlutterFlowTheme.title3,
+          ),
+          TextFormField(
+            controller: textController,
+            obscureText: false,
+            decoration: InputDecoration(
+              hintText: '[Some hint text...]',
+              hintStyle: FlutterFlowTheme.bodyText1,
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0x00000000),
+                  width: 1,
+                ),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(4.0),
+                  topRight: Radius.circular(4.0),
+                ),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0x00000000),
+                  width: 1,
+                ),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(4.0),
+                  topRight: Radius.circular(4.0),
+                ),
+              ),
+              contentPadding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+            ),
+            style: FlutterFlowTheme.bodyText1,
+            maxLines: 5,
           ),
           Text(
             'Steps',
