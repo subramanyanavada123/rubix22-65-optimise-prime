@@ -11,6 +11,14 @@ class Food1CopyWidget extends StatefulWidget {
 }
 
 class _Food1CopyWidgetState extends State<Food1CopyWidget> {
+  TextEditingController textController;
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -46,10 +54,10 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Expired',
+                        'Recipie',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
-                          color: Color(0xFFE21A1A),
+                          color: Color(0xFF244F02),
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
@@ -59,30 +67,39 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Text(
-                        'Food name',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500,
+                      Container(
+                        width: 100,
+                        height: 30,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.tertiaryColor,
                         ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'StoredDate',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 12,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                        child: Text(
-                          'DD/MM/YY',
+                        child: TextFormField(
+                          controller: textController,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintText: 'Bread,milk...',
+                            hintStyle: FlutterFlowTheme.bodyText1,
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
                           style: FlutterFlowTheme.bodyText1,
                         ),
                       ),
@@ -97,30 +114,6 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          'Expired on',
-                          style: FlutterFlowTheme.bodyText1,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'dd/mm/yy',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFFE21A1A),
-                        ),
-                      ),
-                    ],
-                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -144,6 +137,10 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
                         ),
                       ),
                     ],
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [],
                   ),
                 ],
               ),

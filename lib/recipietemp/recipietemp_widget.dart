@@ -194,26 +194,6 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 50, 0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Icon(
-                                Icons.chevron_left,
-                                color: FlutterFlowTheme.tertiaryColor,
-                                size: 40,
-                              ),
-                              Text(
-                                'Back',
-                                style: FlutterFlowTheme.bodyText1.override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -228,29 +208,6 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                             ),
                             Text(
                               'Support',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Poppins',
-                                color: FlutterFlowTheme.tertiaryColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
-                              child: Icon(
-                                Icons.navigate_next,
-                                color: FlutterFlowTheme.tertiaryColor,
-                                size: 40,
-                              ),
-                            ),
-                            Text(
-                              'Next',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.tertiaryColor,
