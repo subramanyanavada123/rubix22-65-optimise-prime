@@ -146,6 +146,10 @@ class _Food4WidgetState extends State<Food4Widget> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
+                  Text(
+                    'Donate',
+                    style: FlutterFlowTheme.bodyText1,
+                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
