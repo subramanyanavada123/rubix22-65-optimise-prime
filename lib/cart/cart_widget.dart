@@ -20,6 +20,18 @@ class _CartWidgetState extends State<CartWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('FloatingActionButton pressed ...');
+        },
+        backgroundColor: Color(0xFFB4DFF5),
+        elevation: 8,
+        child: Icon(
+          Icons.add,
+          color: Colors.black,
+          size: 30,
+        ),
+      ),
       body: SafeArea(
         child: Row(
           mainAxisSize: MainAxisSize.max,
