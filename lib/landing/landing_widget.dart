@@ -55,10 +55,10 @@ class _LandingWidgetState extends State<LandingWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 20),
                                       child: Image.asset(
-                                        'assets/images/ON_explore@3x.png',
+                                        'assets/images/maa.png',
                                         width: 350,
                                         height: 400,
-                                        fit: BoxFit.fitWidth,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                   ],
@@ -70,7 +70,7 @@ class _LandingWidgetState extends State<LandingWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        'Explore your City',
+                                        'Taste Hunt?',
                                         style: FlutterFlowTheme.title1.override(
                                           fontFamily: 'Lexend Deca',
                                           color: Colors.white,
@@ -89,7 +89,7 @@ class _LandingWidgetState extends State<LandingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Find hidden Gems around your city, by exploring the curated lists of others.',
+                                          'Looking for your mothers amazing taste? want to organize things like her?',
                                           style: FlutterFlowTheme.subtitle2
                                               .override(
                                             fontFamily: 'Lexend Deca',
@@ -147,7 +147,7 @@ class _LandingWidgetState extends State<LandingWidget> {
                             width: 100,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Color(0xFF15212B),
+                              color: Color(0xFFB4DFF5),
                             ),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -161,10 +161,10 @@ class _LandingWidgetState extends State<LandingWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 20),
                                       child: Image.asset(
-                                        'assets/images/ON_messages@3x.png',
+                                        'assets/images/oo.png',
                                         width: 350,
                                         height: 400,
-                                        fit: BoxFit.fitWidth,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                   ],
@@ -176,10 +176,10 @@ class _LandingWidgetState extends State<LandingWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        'Message Friends',
+                                        'Maa Ki Rasoee',
                                         style: FlutterFlowTheme.title1.override(
                                           fontFamily: 'Lexend Deca',
-                                          color: Colors.white,
+                                          color: Color(0xFF00063D),
                                           fontSize: 32,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -195,11 +195,11 @@ class _LandingWidgetState extends State<LandingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Stay in the loop with trip plans, places to go and transportation.',
+                                          'When mother finds her way in form of app',
                                           style: FlutterFlowTheme.subtitle2
                                               .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: Color(0x99FFFFFF),
+                                            color: Color(0xFF171515),
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -225,7 +225,7 @@ class _LandingWidgetState extends State<LandingWidget> {
                                           options: FFButtonOptions(
                                             width: 170,
                                             height: 50,
-                                            color: Colors.white,
+                                            color: Color(0xFF00063D),
                                             textStyle: FlutterFlowTheme
                                                 .subtitle2
                                                 .override(
@@ -267,10 +267,10 @@ class _LandingWidgetState extends State<LandingWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 0, 0, 30),
                                       child: Image.asset(
-                                        'assets/images/ON_expenses@3x.png',
+                                        'assets/images/fridge4.png',
                                         width: 350,
                                         height: 400,
-                                        fit: BoxFit.fitWidth,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                   ],
