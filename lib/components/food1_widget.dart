@@ -89,7 +89,7 @@ class Food1Widget extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        "Stored Date: ",
+                        "Expiry Date: ",
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Lato',
                           fontSize: 10,
@@ -98,7 +98,7 @@ class Food1Widget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                         child: Text(
-                          values['created_date'].toString(),
+                          values['expiry_date'].toString(),
                           style: FlutterFlowTheme.bodyText1,
                         ),
                       ),
@@ -108,7 +108,7 @@ class Food1Widget extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        values['expiry_date'].toString(),
+                        "Stored Date: ",
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           color: Color(0xFFDA1111),
@@ -118,7 +118,7 @@ class Food1Widget extends StatelessWidget {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                         child: Text(
-                          'dd/mm/yy',
+                          values['created_date'].toString(),
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.primaryColor,

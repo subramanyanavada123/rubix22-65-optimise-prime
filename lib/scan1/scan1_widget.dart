@@ -5,7 +5,6 @@ import 'package:path/path.dart';
 import '../components/scan_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../recipie/recipie_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_tesseract_ocr/flutter_tesseract_ocr.dart';

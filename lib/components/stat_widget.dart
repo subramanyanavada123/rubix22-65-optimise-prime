@@ -138,7 +138,7 @@ class _StatWidgetState extends State<StatWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Expiring\nSoon',
+                                    'Expiring',
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Poppins',
                                       color: Color(0xC4050E6A),

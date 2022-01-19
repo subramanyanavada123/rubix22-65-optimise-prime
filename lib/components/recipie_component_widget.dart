@@ -16,17 +16,17 @@ class RecipieComponentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.85,
-      height: MediaQuery.of(context).size.height * 0.65,
+      width: MediaQuery.of(context).size.width * 0.9,
+      height: MediaQuery.of(context).size.height * 0.5,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.tertiaryColor,
         boxShadow: [
           BoxShadow(
             blurRadius: 5,
-            color: FlutterFlowTheme.tertiaryColor,
+            color: Color(0xFFAEE1E1),
           )
         ],
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.max,
