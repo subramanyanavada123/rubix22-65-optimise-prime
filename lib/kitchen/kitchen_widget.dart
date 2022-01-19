@@ -1,4 +1,4 @@
-import '../components/food2_widget.dart';
+import '../components/lists1_widget.dart';
 import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -54,7 +54,9 @@ class _KitchenWidgetState extends State<KitchenWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   StatWidget(),
-                  Food2Widget(),
+                  Expanded(
+                    child: Lists1Widget(),
+                  ),
                 ],
               ),
             ),
