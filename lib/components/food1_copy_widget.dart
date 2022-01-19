@@ -42,8 +42,27 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
         ),
         child: Row(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(2),
+                    child: Image.network(
+                      'https://picsum.photos/seed/80/600',
+                      width: 50,
+                      height: 50,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
               child: Column(
@@ -110,7 +129,7 @@ class _Food1CopyWidgetState extends State<Food1CopyWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(65, 0, 5, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.end,

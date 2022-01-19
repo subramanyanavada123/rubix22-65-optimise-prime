@@ -22,6 +22,8 @@ class _Scan1WidgetState extends State<Scan1Widget> {
     textController = TextEditingController();
   }
 
+  void 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
