@@ -17,7 +17,8 @@ class RecipietempWidget extends StatefulWidget {
 class _RecipietempWidgetState extends State<RecipietempWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  var recipes;
+  var recipeInfo;
+  var steps;
   bool present = false;
 
   void initState() {
@@ -26,16 +27,25 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
   }
 
   void getData() async {
-    // String url =
-    //     "https://api.spoonacular.com/recipes/324694/analyzedInstructions?apiKey=" + API_KEY;
+    var id = "324694";
+    var API_KEY = "8afaaf5604f4495fa9e9b52c1fb6a8ef";
+    String url =
+        "https://api.spoonacular.com/recipes/" + id + "/analyzedInstructions?apiKey=" + API_KEY;
 
-    String url = "http://192.168.0.192:5000/fetchrecipe";
+    // String url = "http://192.168.0.192:5000/fetchrecipe";
 
-    final response = await http.get(Uri.parse(url));
+    var response = await http.get(Uri.parse(url));
     var data = json.decode(response.body);
     print(data);
     setState(() {
-      recipes = data;
+      steps = data;
+    });
+    url = "https://api.spoonacular.com/recipes/" + id + "/information?apiKey=" + API_KEY;
+    response = await http.get(Uri.parse(url));
+    data = json.decode(response.body);
+    print(data);
+    setState(() {
+      recipeInfo = data;
       present = true;
     });
   }
@@ -66,8 +76,8 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                         color: Color(0xFFEEEEEE),
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: Image.asset(
-                            'assets/images/try1.jpg',
+                          image: Image.network(
+                            present ? recipeInfo['image'] : "https://spoonacular.com/recipeImages/716429-556x370.jpg"
                           ).image,
                         ),
                         boxShadow: [
@@ -84,7 +94,8 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Recipie1Widget(),
+                    if(present)
+                      Recipie1Widget(steps, recipeInfo),
                   ],
                 ),
               ],

@@ -3,16 +3,12 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RecipiesearchComponentWidget extends StatefulWidget {
-  const RecipiesearchComponentWidget({Key key}) : super(key: key);
+class RecipiesearchComponentWidget extends StatelessWidget {
 
-  @override
-  _RecipiesearchComponentWidgetState createState() =>
-      _RecipiesearchComponentWidgetState();
-}
+  var values;
 
-class _RecipiesearchComponentWidgetState
-    extends State<RecipiesearchComponentWidget> {
+  RecipiesearchComponentWidget(this.values);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -47,8 +43,8 @@ class _RecipiesearchComponentWidgetState
                       color: Color(0xFFEEEEEE),
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: Image.asset(
-                          'assets/images/try1.jpg',
+                        image: Image.network(
+                          values['image']
                         ).image,
                       ),
                       borderRadius: BorderRadius.circular(0),
@@ -68,7 +64,7 @@ class _RecipiesearchComponentWidgetState
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Dish name',
+                        values['title'],
                         style: FlutterFlowTheme.title1.override(
                           fontFamily: 'Poppins',
                           fontSize: 20,
@@ -80,7 +76,7 @@ class _RecipiesearchComponentWidgetState
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Type',
+                        "Calories: " + values['calories'].toString(),
                         style: FlutterFlowTheme.subtitle2,
                       ),
                     ],
@@ -95,7 +91,7 @@ class _RecipiesearchComponentWidgetState
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                         child: Text(
-                          'High',
+                          values['fat'].toString(),
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.primaryColor,

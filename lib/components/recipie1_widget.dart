@@ -4,23 +4,16 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Recipie1Widget extends StatefulWidget {
-  const Recipie1Widget({Key key}) : super(key: key);
+class Recipie1Widget extends StatelessWidget {
 
-  @override
-  _Recipie1WidgetState createState() => _Recipie1WidgetState();
-}
+  TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
 
-class _Recipie1WidgetState extends State<Recipie1Widget> {
-  TextEditingController textController1;
-  TextEditingController textController2;
+  var steps;
+  var info;
 
-  @override
-  void initState() {
-    super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-  }
+  Recipie1Widget(this.steps,this.info);
+
 
   @override
   Widget build(BuildContext context) {

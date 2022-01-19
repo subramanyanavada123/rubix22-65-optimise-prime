@@ -23,6 +23,7 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
   void getItems() async {
     try {
       // String url = "http://192.168.0.192:5000/" + "api/getitem";
+      String text = "chicken";
       String url = "https://api.spoonacular.com/recipes/complexSearch?query="+ text + "&apiKey=8afaaf5604f4495fa9e9b52c1fb6a8ef";
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
@@ -64,7 +65,10 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    RecipiesearchComponentWidget(),
+                    if(present)
+                      ...(items).map((item){
+                        return RecipiesearchComponentWidget(item);
+                      })
                   ],
                 ),
               ],
