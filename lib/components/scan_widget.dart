@@ -1,3 +1,5 @@
+import 'package:makirasoii2/cart/cart_widget.dart';
+
 import '../flutter_flow/flutter_flow_count_controller.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -7,6 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 class ScanWidget extends StatefulWidget {
   const ScanWidget({Key key}) : super(key: key);
@@ -30,6 +35,60 @@ class _ScanWidgetState extends State<ScanWidget> {
     textController1 = TextEditingController();
     textController2 = TextEditingController();
     textController3 = TextEditingController();
+  }
+
+  void upload() async {
+    try {
+      var url =
+          "http://192.168.0.192:5000/" + "api/postitem";
+      print(url);
+      final response = await http.post(Uri.parse(url),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'accept': 'application/json'
+          },
+          body: jsonEncode(<String, String>{
+            "item_name": textController1.text,
+            "expiry_date": expiry_date.toString(),
+            "type": dropDownValue,
+            "price": textController2.text,
+            "quantity": countControllerValue.toString()
+          }));
+      print(response.statusCode);
+      if (response.statusCode == 200) {
+        // If the server did return a 201 CREATED response,
+        // then parse the JSON.
+        print(response.body);
+        var data = json.decode(response.body);
+        if (data['success']) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Item Added Successfully'),
+                backgroundColor: Colors.green),
+          );
+          await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        CartWidget(),
+                  ),
+                );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+                content: Text('Could not fetch data'),
+                backgroundColor: Colors.redAccent),
+          );
+        }
+      }
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('No Interent Found, try again'),
+            backgroundColor: Colors.redAccent),
+      );
+    }
   }
 
   @override
@@ -143,11 +202,11 @@ class _ScanWidgetState extends State<ScanWidget> {
                             controller: textController2,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Cost',
-                              labelStyle: FlutterFlowTheme.bodyText1,
+                              hintText: 'Cost',
+                              hintStyle: FlutterFlowTheme.title3,
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0x00000000),
+                                  color: Color(0xFF00063D),
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -157,7 +216,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                               ),
                               focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Color(0x00000000),
+                                  color: Color(0xFF00063D),
                                   width: 1,
                                 ),
                                 borderRadius: const BorderRadius.only(
@@ -165,8 +224,10 @@ class _ScanWidgetState extends State<ScanWidget> {
                                   topRight: Radius.circular(4.0),
                                 ),
                               ),
+                              contentPadding:
+                                  EdgeInsetsDirectional.fromSTEB(5, 15, 5, 5),
                             ),
-                            style: FlutterFlowTheme.bodyText1,
+                            style: FlutterFlowTheme.title3,
                           ),
                         ),
                       ),
@@ -190,7 +251,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                               firstDate: DateTime.now(),
                               lastDate: DateTime(2023),
                             ).then((date) {
-                              setState((){
+                              setState(() {
                                 expiry_date = date;
                               });
                             });
@@ -268,6 +329,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                   FFButtonWidget(
                     onPressed: () {
                       print('Button pressed ...');
+                      upload();
                     },
                     text: 'Save',
                     options: FFButtonOptions(

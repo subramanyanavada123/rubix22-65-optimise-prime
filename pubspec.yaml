@@ -42,6 +42,9 @@ dependencies:
   cupertino_icons: ^1.0.0
   image_picker: ^0.8.4+4
   flutter_tesseract_ocr: ^0.4.19
+  flutter_chat_ui: ^1.5.2
+  mime: ^1.0.1
+  flutter_tts: ^3.3.3
 
 dev_dependencies:
 
@@ -68,6 +71,7 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/tessdata/
+    - assets/tessdata_config.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

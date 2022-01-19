@@ -1,8 +1,15 @@
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart';
+
 import '../components/scan_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../recipie/recipie_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_tesseract_ocr/flutter_tesseract_ocr.dart';
+
 
 class Scan1Widget extends StatefulWidget {
   const Scan1Widget({Key key}) : super(key: key);
@@ -12,6 +19,7 @@ class Scan1Widget extends StatefulWidget {
 }
 
 class _Scan1WidgetState extends State<Scan1Widget> {
+  String _text;
   String uploadedFileUrl = '';
   TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -28,7 +36,7 @@ class _Scan1WidgetState extends State<Scan1Widget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       body: SingleChildScrollView(
-              child: SafeArea(
+        child: SafeArea(
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -58,8 +66,8 @@ class _Scan1WidgetState extends State<Scan1Widget> {
                                   Container(
                                     width:
                                         MediaQuery.of(context).size.width * 0.9,
-                                    height:
-                                        MediaQuery.of(context).size.height * 0.25,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.25,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.tertiaryColor,
                                       boxShadow: [
@@ -69,17 +77,36 @@ class _Scan1WidgetState extends State<Scan1Widget> {
                                         )
                                       ],
                                     ),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Upload',
-                                          style: FlutterFlowTheme.bodyText1,
-                                        ),
-                                      ],
+                                    child: InkWell(
+                                      onTap: () async {
+                                        setState((){
+                                          _text = "Scanning";
+                                        });
+                                        final results =
+                                            await ImagePicker().pickImage(
+                                          imageQuality: 70,
+                                          maxWidth: 1440,
+                                          source: ImageSource.gallery,
+                                        );
+                                        final text = await FlutterTesseractOcr.extractText(results.path);
+                                        setState((){
+                                          _text = text;
+                                        });
+                                        print(text);
+                                      },
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Upload',
+                                            style: FlutterFlowTheme.bodyText1,
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -89,7 +116,8 @@ class _Scan1WidgetState extends State<Scan1Widget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Container(
-                                  width: MediaQuery.of(context).size.width * 0.9,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.9,
                                   height:
                                       MediaQuery.of(context).size.height * 0.25,
                                   decoration: BoxDecoration(
@@ -102,7 +130,7 @@ class _Scan1WidgetState extends State<Scan1Widget> {
                                       controller: textController,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: '[Some hint text...]',
+                                        hintText: _text ??= "Scan to extract" ,
                                         hintStyle: FlutterFlowTheme.bodyText1,
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(

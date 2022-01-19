@@ -3,15 +3,13 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Food1Widget extends StatefulWidget {
-  const Food1Widget({Key key}) : super(key: key);
+class Food1Widget extends StatelessWidget {
 
-  @override
-  _Food1WidgetState createState() => _Food1WidgetState();
-}
+  var values;
+  DateTime today = DateTime.now();
 
-class _Food1WidgetState extends State<Food1Widget> {
-  @override
+  Food1Widget(this.values);
+
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),
@@ -46,7 +44,7 @@ class _Food1WidgetState extends State<Food1Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Expired',
+                        values['expiry_date'].compareTo(today.toString()) == -1 ? 'Expired' : "Active",
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           color: Color(0xFFE21A1A),
@@ -60,7 +58,7 @@ class _Food1WidgetState extends State<Food1Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'Food name',
+                        values['item_name'],
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           fontSize: 15,
@@ -73,7 +71,7 @@ class _Food1WidgetState extends State<Food1Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'StoredDate',
+                        "Stored Date: ",
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           fontSize: 12,
@@ -82,7 +80,7 @@ class _Food1WidgetState extends State<Food1Widget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                         child: Text(
-                          'DD/MM/YY',
+                          values['created_date'].toString(),
                           style: FlutterFlowTheme.bodyText1,
                         ),
                       ),
@@ -113,7 +111,7 @@ class _Food1WidgetState extends State<Food1Widget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        'dd/mm/yy',
+                        values['expiry_date'].toString(),
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Poppins',
                           color: Color(0xFFE21A1A),
